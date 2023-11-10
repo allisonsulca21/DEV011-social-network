@@ -40,6 +40,7 @@ function post(data, id) {
   textAreaPost.textContent = data.comment; // aqui mandamos la informacion del textarea
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
+  // tituloLike.textContent = 'comentarios';
 
   cardPost.id = cardPost;
   textAreaPost.id = 'textAreaPost-txt';
