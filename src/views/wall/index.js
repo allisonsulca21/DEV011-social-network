@@ -4,8 +4,9 @@ import { createPost } from './createPost.js';
 import post from './post.js';
 import footer from './footer.js';
 import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
+import modalEdit from '../modals/modalEdit.js';
 
-import { deletePost, paintRealTime } from '../../lib/index';
+import { deletePost, paintRealTime, updatePost } from '../../lib/index';
 
 function muro(navigateTo) {
   const sectionWall = document.createElement('section');
@@ -26,7 +27,9 @@ function muro(navigateTo) {
       sectionPost.append(postComponents);
     });
     const btnsDelete = sectionPost.querySelectorAll('.btn-delete');
+    const btnsEdit = sectionPost.querySelectorAll('.btn-edit');
     openModal(btnsDelete);
+    openModalEdit(btnsEdit);
   });
 
   function openModal(btnsDelete) {
@@ -50,6 +53,38 @@ function muro(navigateTo) {
         btnConfirmCancel.addEventListener('click', () => {
           console.log('Acción de cancelación confirmada');
           modalDelete.style.display = 'none';
+        });
+      });
+    });
+  }
+
+  function openModalEdit(btnsEdit) {
+    btnsEdit.forEach((elemento) => {
+      elemento.addEventListener('click', () => {
+        const dataId = elemento.dataset.id;
+        const ccomment = elemento.dataset.comment;
+        console.log('si entro');
+        console.log(ccomment);
+        console.log(dataId);
+        const modalEditPost = modalEdit(ccomment);
+        document.body.appendChild(modalEditPost);
+        // console.log(modalEditPost);
+        const btnSavePostEdit = modalEditPost.querySelector('.btnSavePost-edit');
+        const btnCancel = modalEditPost.querySelector('.btn-cancel');
+
+        btnSavePostEdit.addEventListener('click', async () => {
+          console.log('Acción de guardado de cambios confirmada');
+          modalEditPost.style.display = 'none';
+          // Obtener el nuevo comentario desde la ventana modal
+          const newComment = modalEditPost.querySelector('.txtArea-post').value;
+          console.log(newComment);
+          // Actualizar el post en la base de datos
+          await updatePost(dataId, { comment: newComment });
+        });
+
+        btnCancel.addEventListener('click', () => {
+          console.log('Acción de cancelación confirmada');
+          modalEditPost.style.display = 'none';
         });
       });
     });

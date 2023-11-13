@@ -2,7 +2,9 @@
 @import './login.css';
 @import './profile.css';
 @import '/views/wall/wall.css';
+@import './modalCreatePost.css';
 @import './modalConfirmationDelete.css';
+@import './modalEdit.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {
@@ -16,7 +18,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
 
+
     /* background-image: url('../img-sn/background-1.png'); */
+    /* background-image: url('../img-sn/bg-clear.png'); */
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
     /* background-image: url('../img-sn/bg-clear.png'); */
     background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
     background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
@@ -124,6 +130,24 @@ body {
     }
 }
 
+@media (max-width: 800px) {
+    body {
+        background-image: none;
+        background-color: #2D2D2D;
+    }
+    .imgho {
+        width: 25%;
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+    .textho {
+        color: cornsilk;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: smaller;
+        text-align: center;
+        margin: 0% 6% 0% 6%;
+    }
+}
 
 /* register */
 /* body, html {

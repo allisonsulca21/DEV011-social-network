@@ -5,6 +5,7 @@ function post(data, id) {
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
   const imgUserHeadPost = document.createElement('img');
+  // const circleImgPost = document.createElement('div');
   const titleNameUser = document.createElement('h2');
   // const btnOptionsPost = document.createElement('div');
   const btnEdit = document.createElement('button');
@@ -25,6 +26,8 @@ function post(data, id) {
   // buttons
   // btnOptionsPost.classList.add('btnOptions-post');
   btnEdit.classList.add('btn-edit');
+  btnEdit.setAttribute('data-id', id);
+  btnEdit.setAttribute('data-comment', data.comment);
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('data-id', id);
 

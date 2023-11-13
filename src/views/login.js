@@ -85,7 +85,7 @@ function login(navigateTo) {
       .then((userCredential) => {
         const user = userCredential.user;
         alert('Inicio de sesión exitoso.', user);
-        navigateTo('/profile');
+        navigateTo('/muro');
       })
       .catch((error) => {
         const errorCode = error.code;

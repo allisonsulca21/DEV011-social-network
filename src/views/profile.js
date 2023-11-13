@@ -50,15 +50,14 @@ function profile(navigateTo) {
     navigateTo('/edit');
   });
 
-  buttonExit.textContent = 'Log Out';
-  buttonExit.addEventListener('click', () => {
-    navigateTo('/');
-  });
-
-  nav.appendChild(imgProfile);
-  document.body.appendChild(nav);
-  // eslint-disable-next-line max-len
-  bodyCont.append(imageHeader, nav, image, name, address, article, main, buttonEditP, buttonExit, homeBar, homeIcon, moreIcon, profileIcon);
-  return bodyCont;
+    buttonExit.textContent = 'Log Out';
+    buttonExit.addEventListener('click', () => {
+        navigateTo('/');
+    });
+        
+    nav.appendChild(imgProfile);
+    document.body.appendChild(nav);
+    bodyCont.append(imageHeader, nav, image, name, address, article, main, buttonEditP, buttonExit, homeBar, homeIcon, moreIcon, profileIcon);
+    return bodyCont;
 }
 export default profile;

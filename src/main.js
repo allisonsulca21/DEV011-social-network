@@ -8,6 +8,7 @@ import muro from './views/wall/index.js';
 import register from './views/register.js';
 import profile from './views/profile.js';
 import edit from './views/edit.js';
+import modalCreatePost from './views/modalCreatePost.js';
 import { checkAuthStatus } from './lib/auth.js'; // Solo importa la función de autenticación
 
 const routes = [
@@ -16,6 +17,9 @@ const routes = [
   { path: '/error', component: error },
   { path: '/muro', component: muro },
   { path: '/register', component: register },
+  { path: '/profile', component: profile },
+  { path: '/edit', component: edit },
+  { path: '/modalCreatePost', component: modalCreatePost },
   { path: '/profile', component: profile },
   { path: '/edit', component: edit },
 ];
