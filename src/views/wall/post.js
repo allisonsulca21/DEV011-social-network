@@ -27,10 +27,13 @@ function post(data, id) {
   btnEdit.classList.add('btn-edit');
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('data-id', id);
+  btnEdit.setAttribute('data-id', id);
+  btnEdit.setAttribute('data-comment', data.comment);
 
   cardPost.classList.add('card-post');
   textAreaPost.classList.add('txtArea-post');
   likePost.classList.add('like-post');
+  textAreaPost.setAttribute('readonly', 'true');
   like.classList.add('btnLike-post');
   contadorLike.classList.add('contadorLike-post');
   tituloLike.classList.add('tituloLike-post');

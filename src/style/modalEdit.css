@@ -1,0 +1,72 @@
+@media screen and (min-width: 360px) and (max-width: 767px) {
+
+    .section-edit{
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-top: 60px;
+    }
+    .modalContent-edit{
+        background-color:#FFF;
+        margin: 70% auto;
+        padding: 15px;
+        border: 1px solid #888888c7;
+        border-radius: 20px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .txtArea-post{
+        width: 90%;
+        height: auto;
+    }
+
+    .tituloModal-edit{   
+        color: rgb(36, 34, 34);
+        font-family: Inter;
+        font-size: medium;
+        font-weight: bolder;
+        padding: 20px;
+
+    }
+    .btnSavePost-edit{
+        width: 90px;
+        height: 32px;
+        margin-bottom: 15px;
+        margin-left: 3%;
+        border-radius: 6px;
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        color: #FFF;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        border: none;
+    }
+    .btn-cancel{
+        width: 90px;
+        height: 32px;
+        margin-bottom: 15px;
+        margin-right: 3%;
+        border-radius: 6px;
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        color: #FFF;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        border: none;
+    }
+    .show-modal{
+        display: block;
+    }
+    .hide-modal{
+        display: none;
+    }
+
+
+}

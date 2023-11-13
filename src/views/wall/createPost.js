@@ -1,6 +1,6 @@
 // import { doc } from 'firebase/firestore';
 // import { paintRealTime, createPostFirestore } from '../../lib/index';
-import { createPostFirestore } from '../../lib/index';
+// import { createPostFirestore } from '../../lib/index';
 
 export const createPost = () => {
   const containerCreatePost = document.createElement('div');
@@ -27,11 +27,11 @@ export const createPost = () => {
   buttonPublish.id = 'btnPost';
   buttonPublish.textContent = 'Publish';
 
-  buttonPublish.addEventListener('click', () => {
-    const comment = txtAreaCreatePost.value; // Usar txtAreaCreatePost directamente
-    createPostFirestore(comment);
-    txtAreaCreatePost.value = '';
-  });
+  // buttonPublish.addEventListener('click', () => {
+  //   const comment = txtAreaCreatePost.value; // Usar txtAreaCreatePost directamente
+  //   createPostFirestore(comment);
+  //   txtAreaCreatePost.value = '';
+  // });
 
   containerImg.append(circleImg);
   circleImg.append(imgUserCreatePost);

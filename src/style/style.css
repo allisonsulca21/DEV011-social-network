@@ -3,6 +3,7 @@
 @import './profile.css';
 @import '/views/wall/wall.css';
 @import './modalConfirmationDelete.css';
+@import './modalEdit.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {
