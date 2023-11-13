@@ -1,35 +1,49 @@
 // file profile.js
+// import footer from './wall/footer.js';
+import { signOutUser } from '../lib/auth.js';
+
 function profile(navigateTo) {
+  // const footerComponents = footer(navigateTo);
+
   const bodyCont = document.createElement('body');
-  bodyCont.classList.add('bodypro');
+  const header = document.createElement('section');
   const imageHeader = document.createElement('img');
-  imageHeader.classList.add('imghpro');
+  const buttonReturn = document.createElement('button');
   const nav = document.createElement('nav');
-  nav.classList.add('navpro');
   const image = document.createElement('img');
-  image.classList.add('imgpro');
   const name = document.createElement('h2');
-  name.classList.add('namepro');
   const address = document.createElement('address');
-  address.classList.add('addresspro');
   const article = document.createElement('article');
-  article.classList.add('acticlepro');
   const main = document.createElement('main');
-  main.classList.add('mainpro');
   const homeBar = document.createElement('homeBar');
-  homeBar.classList.add('homeBarPro');
   const homeIcon = document.createElement('aside');
-  homeIcon.classList.add('homeIcon');
   const moreIcon = document.createElement('section');
-  moreIcon.classList.add('moreIcon');
   const profileIcon = document.createElement('section');
+
+  bodyCont.classList.add('bodypro');
+  header.classList.add('headerProfile');
+  imageHeader.classList.add('imghpro');
+  buttonReturn.classList.add('buttonReturn');
+  nav.classList.add('navpro');
+  image.classList.add('imgpro');
+  name.classList.add('namepro');
+  address.classList.add('addresspro');
+  article.classList.add('acticlepro');
+  main.classList.add('mainpro');
+  homeBar.classList.add('homeBarPro');
+  homeIcon.classList.add('homeIcon');
+  moreIcon.classList.add('moreIcon');
   profileIcon.classList.add('profileIcon');
   // buttons
+  const buttons = document.createElement('section');
   const buttonEditP = document.createElement('button');
-  buttonEditP.classList.add('buttonEdit');
   const buttonExit = document.createElement('button');
+
+  buttons.classList.add('buttonsContainer');
+  buttonEditP.classList.add('buttonEdit');
   buttonExit.classList.add('buttonExit');
 
+  buttonReturn.src = '../img-sn/buttonReturn.svg';
   imageHeader.src = '../img-sn/header.jpg';
   // nav.textContent = 'img';
   // image.src = '../img-sn/profile.jpg';
@@ -52,13 +66,26 @@ function profile(navigateTo) {
 
   buttonExit.textContent = 'Log Out';
   buttonExit.addEventListener('click', () => {
-    navigateTo('/');
+    signOutUser()
+      .then(() => {
+      // Usuario desconectado con éxito
+      // Redirige a la página de inicio
+        navigateTo('/');
+      })
+      .catch((error) => {
+      // Maneja errores de cierre de sesión
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Error al cerrar sesión:', errorCode, errorMessage);
+      });
   });
 
+  header.appendChild(imageHeader, buttonReturn);
   nav.appendChild(imgProfile);
   document.body.appendChild(nav);
+  buttons.append(buttonEditP, buttonExit);
   // eslint-disable-next-line max-len
-  bodyCont.append(imageHeader, nav, image, name, address, article, main, buttonEditP, buttonExit, homeBar, homeIcon, moreIcon, profileIcon);
+  bodyCont.append(header, nav, image, name, address, buttons, article, main, homeBar, homeIcon, moreIcon, profileIcon);
   return bodyCont;
 }
 export default profile;

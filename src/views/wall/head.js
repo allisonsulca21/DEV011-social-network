@@ -12,8 +12,8 @@ function head(navigateTo) {
   line.classList.add('line-section');
   imgLogoWall.classList.add('imgLogo-wall');
   btnSignUpWall.classList.add('btnSignUp-wall');
-
-  imgLogoWall.src = './img-sn/festilogoLetras.svg';
+  // cambio logooo09/11
+  imgLogoWall.src = './img-sn/festilogoV2-title.png';
   btnSignUpWall.textContent = 'Sign Out';
   btnSignUpWall.addEventListener('click', () => {
     signOutUser()

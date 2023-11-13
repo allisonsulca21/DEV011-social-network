@@ -53,6 +53,9 @@ function muro(navigateTo) {
         });
       });
     });
+    // función edit post
+
+    // función likes
   }
 
   sectionWall.append(headComponents, createPostComponents, sectionPost, footerComponents);

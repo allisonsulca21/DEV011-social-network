@@ -118,7 +118,8 @@
     line-height: normal;
     border: none;
 }
-@media(max-width: 800px) {
+/* @media(max-width: 800px) { */
+@media screen and (min-width: 360px) and (max-width: 767px) {
     body {
         display: block;
         justify-content: center;
@@ -132,6 +133,7 @@
         display: flex;
         width: auto;
         height: auto;
+        margin-top: 30%; /*nuevo cambio09/11*/
         justify-content: center;
         justify-items: center;
         align-content: center;

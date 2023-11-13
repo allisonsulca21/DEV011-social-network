@@ -19,7 +19,8 @@
       padding-top: 27px;
       justify-content: space-around;
       background-color: #2D2D2D;
-      border: 1px solid #000; /* Grosor y color del borde */
+      border: 1px solid #000;
+      /* Grosor y color del borde */
       box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.2);
    }
 
@@ -141,10 +142,11 @@
       /*border-top: 2.5px solid #000;  Grosor y color del borde superior */
       /*border-bottom: 2.5px solid #000;  Grosor y color del borde inferior */
       border-top: 1.5px solid #1b1b1b;
-      margin-top: 8px;
+      margin: 8px 0px 0px 0px;
    }
 
-   .head-post { /*cambio?*/
+   .head-post {
+      /*cambio?*/
       padding-top: 15px;
       width: 80%;
       height: auto;
@@ -178,16 +180,6 @@
       font-weight: 600;
       word-wrap: break-word;
       padding: 10px;
-   }
-
-   .btnOptions-post {
-      width: 60px;
-      height: 60px;
-      background-image: url('../../img-sn/options.svg');
-      background-size: cover;
-      border: none;
-      background-color: transparent;
-
    }
 
    .card-post {
@@ -279,7 +271,7 @@
       width: 28px;
       height: 28px;
       /*margin-left: 210px; si está abajo (modo celu) */
-      margin-left: 5px; 
+      margin-left: 5px;
       background-image: url(/img-sn/Delete.svg);
       background-size: cover;
       border: none;
@@ -295,14 +287,6 @@
       padding: 8% 4% 8% 4%; */
    }
 
-   #close {
-      background-color: white;
-      border-radius: 100px;
-      border: none;
-      /* margin: 4% 0% 4% 0%; */
-   }
-
-
    /* ////////////////////////// footer wall /////////////////////// */
 
    .containerFooter-wall {
@@ -316,10 +300,10 @@
       position: fixed;
       bottom: 0;
       border: 5px solid #000;
-      box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5); 
-}
-   
-   .btnHome-footer{
+      box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
+   }
+
+   .btnHome-footer {
       width: 46px;
       height: 46px;
       display: flex;
@@ -329,7 +313,7 @@
       background-color: transparent;
    }
 
-   .btnCreatePost-footer{
+   .btnCreatePost-footer {
       width: 50px;
       height: 50px;
       margin-left: 40px;
@@ -340,7 +324,7 @@
       background-color: transparent;
    }
 
-   .btnProfile-footer{
+   .btnProfile-footer {
       width: 46px;
       height: 46px;
       margin-left: 40px;
