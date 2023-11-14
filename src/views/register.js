@@ -29,16 +29,16 @@ function register(navigateTo) {
       
               <form class='form-register'>
                 <label for="emailAddress">Email address</label>
-                  <input type="text" id="emailAdress" />
+                  <input type="text" id="emailAdress" placeholder='Email Address'/>
 
                 <label for="fullName">Name</label>
-                  <input type="text" id="name" />
+                  <input type="text" id="name" placeholder='Name'/>
 
                 <label for="password">Password</label>
-                  <input type="password" id="password" />
+                  <input type="password" id="password" placeholder='Password'/>
 
                 <label for="confirm password">Confirm Password</label>
-                  <input type="password" id="confirmPassword" />
+                  <input type="password" id="confirmPassword" placeholder='Confirm Password'/>
                   
                 <button id="registerButton">Create Account</button>
 
