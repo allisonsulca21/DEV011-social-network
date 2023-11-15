@@ -1,5 +1,6 @@
 // file login.js
 import { loginEmailPassword, loginPopUp } from '../lib/auth';
+import modalWelcome from './modals/modalWelcome';
 // import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 function login(navigateTo) {
@@ -61,9 +62,6 @@ function login(navigateTo) {
   });
 
   buttonLogIn.textContent = 'Log In';
-  // buttonLogIn.addEventListener('click', () => {
-  //   navigateTo('/profile');
-  // })
 
   buttonRegister.textContent = 'Register';
   buttonRegister.addEventListener('click', () => {
@@ -77,15 +75,26 @@ function login(navigateTo) {
 
   // LOGUEO EMAIL
 
-  buttonLogIn.addEventListener('click', () => {
+  buttonLogIn.addEventListener('click', (event) => {
     event.preventDefault();
     const email = containerLog.querySelector('#emailAddress').value;
     const password = containerLog.querySelector('#password').value;
+
     loginEmailPassword(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        alert('Inicio de sesión exitoso.', user);
-        navigateTo('/muro');
+        // alert('Inicio de sesión exitoso.', user);
+        const welcomeModal = modalWelcome(user);
+        document.body.appendChild(welcomeModal);
+        console.log(welcomeModal);
+
+        const btnContinue = welcomeModal.querySelector('.continueBtn');
+
+        btnContinue.addEventListener('click', () => {
+          welcomeModal.style.display = 'none';
+        });
+
+        // navigateTo('/muro');
       })
       .catch((error) => {
         const errorCode = error.code;
