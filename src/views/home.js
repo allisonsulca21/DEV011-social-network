@@ -10,7 +10,7 @@ function home(navigateTo) {
   const buttonStart = document.createElement('button');
   buttonStart.classList.add('buttonStart');
 
-  image.src = './img-sn/festilogo1.png';
+  image.src = './img-sn/festilogoV2.png';
   title.textContent = 'Welcome to Festigram, the largest community of concerts and festivals around the world!';
 
   buttonStart.textContent = 'Get Started!';

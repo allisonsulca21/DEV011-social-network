@@ -19,7 +19,7 @@ body {
     background-size: cover;
 
     /* background-image: url('../img-sn/background-1.png'); */
-    /* background-image: url('../img-sn/bg-clear.png'); */
+    background-image: url('../img-sn/bg-clear.png'); 
     background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
     background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
 
