@@ -47,7 +47,7 @@ function post(data, id) {
   imgUserHeadPost.src = './img-sn/user.jpg';
 
   textAreaPost.textContent = data.comment; // aqui mandamos la informacion del textarea
-  titleNameUser.textContent = 'user01';
+  titleNameUser.textContent = data.name; // aquí traemos el nombre del usuario
   contadorLike.textContent = data.likes ? data.likes.length : 0;
   // tituloLike.textContent = 'comentarios';
 

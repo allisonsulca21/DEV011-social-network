@@ -7,7 +7,7 @@ import modalEdit from '../modals/modalEdit.js';
 import { checkAuthStatus } from '../../lib/auth.js';
 
 import {
-  deletePost, paintRealTime, updatePost, createPostFirestore, setLikes,
+  deletePost, paintRealTime, updatePost, createPostFirestore, setLikes, usersRealTime,
 } from '../../lib/index';
 
 function muro(navigateTo) {
@@ -27,26 +27,53 @@ function muro(navigateTo) {
   createPostComponents.querySelector('.button-publish').addEventListener('click', () => {
     const txtArea = createPostComponents.querySelector('.txtAreaCreate-post');
     const comment = txtArea.value;
+    const loggedUserIdLocalStorage = localStorage.getItem('userId');
+    const loggedNameUser = localStorage.getItem('nameUser');
 
     if (comment === '') {
       alert('no hay datos u.u');
     } else {
-      createPostFirestore(comment);
+      createPostFirestore(comment, loggedUserIdLocalStorage, loggedNameUser);
     }
     txtArea.value = '';
   });
 
   /// /////////////////////////////////
+
+  usersRealTime((querySnapshotUsers) => {
+    const loggedUser = localStorage.getItem('userId');
+    let nameUser = '';
+
+    querySnapshotUsers.forEach((user) => {
+      const userData = user.data();
+      if (userData.uid === loggedUser) {
+        nameUser = userData.name;
+        localStorage.setItem('nameUser', nameUser);
+        console.log(`el usuario es ${nameUser}`);
+      }
+    });
+    if (nameUser === '') {
+      console.log('No se encontró el usuario (҂⌣̀_⌣́)');
+    }
+    return nameUser;
+  });
+
+  /// /////////////////////////////////
+
   paintRealTime((querySnapshot) => {
     sectionPost.textContent = '';
     const arrayLikes = [];
+    // querysnapshot nos ayuda a pintar los elementos en tiempo real en la seccion post de muro
     querySnapshot.forEach((doc) => {
+      // aqui estan los datos que nos trae de la bd (doc) y los guardamos en variables
       const data = doc.data();
       const id = doc.id;
+      // aqui guardamos en un array lo que trae del campo likes de la bd
       arrayLikes.push(doc.data().likes);
       const postComponents = post(data, id);
       sectionPost.append(postComponents);
     });
+    // traemos los botones (clases) del modulo post.js
     const btnsDelete = sectionPost.querySelectorAll('.btn-delete');
     const btnsEdit = sectionPost.querySelectorAll('.btn-edit');
     const btnsLike = sectionPost.querySelectorAll('.btnLike-post');
@@ -60,7 +87,6 @@ function muro(navigateTo) {
   function printLike(btnsLike, arrayLikes) {
     console.log(arrayLikes.length);
     btnsLike.forEach((btn) => {
-
       printLikes(btn);
     });
 
@@ -79,8 +105,12 @@ function muro(navigateTo) {
   const getUserId = () => new Promise((resolve) => {
     checkAuthStatus((user) => {
       if (user) {
+        const userId = user.uid;
+        // Guardar user.uid en localStorage
+        localStorage.setItem('userId', userId);
         resolve(user.uid);
       } else {
+        localStorage.removeItem('userId');
         resolve(null);
       }
     });
@@ -113,7 +143,7 @@ function muro(navigateTo) {
         const userId = await getUserId(); // Esperar a que se resuelva la promesa
 
         if (userId) {
-          printLikes(btn);
+          // printLikes(btn);
           setLikes(postId, userId);
         } else {
           console.error('Error: userId no está definido.');
@@ -125,29 +155,6 @@ function muro(navigateTo) {
   function printLikes(btnLike) {
     btnLike.classList.add('iconLike-post');
   }
-
-  // function countLike(idpost, numberLikes, btnlike) {
-  //   btnLike.forEach((btn) => {
-  //     const id = btn.dataset.id;
-  //     const contadorElement = btn.parentElement.querySelector('.contadorLike-post');
-
-  //     let likes = parseInt(contadorElement.innerText) || 0;
-
-  //     if (btn.getAttribute('data-liked') !== 'true') {
-  //       likes++;
-  //       btn.setAttribute('data-liked', 'true');
-  //       console.log(`Se dio like. Nuevo contador de likes: ${likes}`);
-  //       // Aquí podrías realizar otras acciones, como enviar el like a la base de datos
-  //     } else {
-  //       likes--;
-  //       btn.setAttribute('data-liked', 'false');
-  //       console.log(`Se quitó el like. Nuevo contador de likes: ${likes}`);
-  //       // Aquí podrías realizar otras acciones, como eliminar el like de la base de datos
-  //     }
-
-  //     contadorElement.innerText = likes;
-  //   });
-  // }
 
   function openModal(btnsDelete) {
     btnsDelete.forEach((btn) => {

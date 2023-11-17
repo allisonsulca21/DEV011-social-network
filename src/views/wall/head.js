@@ -13,7 +13,7 @@ function head(navigateTo) {
   imgLogoWall.classList.add('imgLogo-wall');
   btnSignUpWall.classList.add('btnSignUp-wall');
   // cambio logooo09/11
-  imgLogoWall.src = './img-sn/festilogoV2-title.png';
+  imgLogoWall.src = './img-sn/festilogoLetras-1-01.svg';
   btnSignUpWall.textContent = 'Sign Out';
   btnSignUpWall.addEventListener('click', () => {
     signOutUser()

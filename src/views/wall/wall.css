@@ -4,7 +4,12 @@
 }
 
 .sectionPost{
+   width: 100%;
    display: contents;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
 }
 
 .container-head {
@@ -231,8 +236,8 @@
    background-image: url('../../img-sn/LikeColor.svg');
 }
 .iconLike-post2 {
-   width: 30px;
-   height: 30px;
+   width: 24px;
+   height: 24px;
    margin-left: 40px;
    background-image: url('../../img-sn/like.svg');
    background-size: cover;
@@ -290,10 +295,9 @@ h1 {
       width: 100%;
       height: auto;
       background-color: #2D2D2D;
-      display: contents;
    }
    .sectionPost {
-      display: contents;
+      width: 100%;
    }
 
    /* ///////////////////////////// Head wall //////////////////////////// */
@@ -514,8 +518,8 @@ h1 {
    }
 
    .btnLike-post {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       margin-left: 40px;
       background-image: url('../../img-sn/like.svg');
       background-size: cover;
