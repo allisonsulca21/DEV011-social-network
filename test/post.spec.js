@@ -5,7 +5,9 @@
 
 // Importa las funciones individuales desde la ruta correcta
 // Importa las funciones y las dependencias necesarias
-import { createPostFirestore, setLikes, deletePost } from '../src/lib/index.js';
+import {
+  createPostFirestore, setLikes, deletePost, updatePost,
+} from '../src/lib/index.js';
 import {
   addDoc, serverTimestamp, getDoc, updateDoc, arrayUnion, deleteDoc,
 } from '../src/lib/firestore.js'; // Ajusta las importaciones según sea necesario
@@ -24,7 +26,6 @@ describe('Prueba para la funcion createPostFirestore', () => {
   test('Muestra la creacion de un post', async () => {
     // Configurar mocks necesarios
     addDoc.mockResolvedValueOnce();
-
     // Llamar a la función
     await createPostFirestore('Post');
 
@@ -57,6 +58,20 @@ describe('Prueba la funcion setLikes', () => {
       expect.anything(),
       { likes: arrayUnion('mock-user-id') },
     );
+  });
+});
+
+describe('Prueba la función updatePost', () => {
+  test('Se puede editar un post', async () => {
+    // Mocks necesarios
+    updateDoc.mockResolvedValueOnce();
+    // Llamamos a la función
+    await updatePost('mock-post-id-yo-edit', 'mock-edited-post-id');
+    // Asegurar que la función getDoc fue llamada con los parámetros espwrados
+    expect(getDoc).toHaveBeenCalledWith(expect.anything());
+
+    // Asegurr que la función updateDoc fue llamada con los parámetros esperados
+    expect(updateDoc).toHaveBeenCalledWith(expect.anything(), 'mock-edited-post-id');
   });
 });
 

@@ -52,7 +52,7 @@
 }
 .title-register h2 {
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 27px;
     margin-bottom: 46px;
     margin-top: 24px;
@@ -79,7 +79,7 @@
 .form-register label {
     color: #FFF;
     text-align: left;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -94,7 +94,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 600;

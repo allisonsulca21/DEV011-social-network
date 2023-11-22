@@ -14,7 +14,7 @@
 }
 .logIn {
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 25px;
     margin-bottom: 46px;
     margin-top: 40px;
@@ -45,7 +45,7 @@
 }
 .linkToResetPassword a {
     color: white;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: small;
     justify-content: flex-end;
     align-items: center;
@@ -57,7 +57,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     line-height: normal;
@@ -93,7 +93,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     line-height: normal;
@@ -106,7 +106,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     line-height: normal;
@@ -150,7 +150,7 @@
         border-radius: 6px;
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
         color: #FFF;
-        font-family: Inter;
+        font-family: 'Inter', sans-serif;
         font-size: 15px;
         font-style: normal;
         font-weight: 600;

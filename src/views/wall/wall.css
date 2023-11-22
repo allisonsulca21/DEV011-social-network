@@ -78,7 +78,7 @@
    color: #565656;
    text-align: justify;
    font-size: 15px;
-   font-family: Inter;
+   font-family: 'Inter', sans-serif;
    font-weight: 600;
    word-wrap: break-word;
    resize: none;
@@ -155,7 +155,7 @@
    color: #FFF;
    text-align: justify;
    font-size: 15px;
-   font-family: Inter;
+   font-family: 'Inter', sans-serif;
    font-weight: 600;
    word-wrap: break-word;
    padding: 10px;
@@ -208,7 +208,7 @@
    color: #565656;
    text-align: justify;
    font-size: 15px;
-   font-family: Inter;
+   font-family: 'Inter', sans-serif;
    font-weight: 600;
    word-wrap: break-word;
    resize: none;
@@ -249,7 +249,7 @@ h1 {
    color: #FFF;
    text-align: justify;
    font-size: 13px;
-   font-family: Inter;
+   font-family: 'Inter', sans-serif;
    font-weight: 600;
    word-wrap: break-word;
    margin-left: 7px;
@@ -376,7 +376,7 @@ h1 {
       color: #565656;
       text-align: justify;
       font-size: 15px;
-      font-family: Inter;
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
       word-wrap: break-word;
       resize: none;
@@ -471,7 +471,7 @@ h1 {
       color: #FFF;
       text-align: justify;
       font-size: 15px;
-      font-family: Inter;
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
       word-wrap: break-word;
       padding: 10px;
@@ -503,7 +503,7 @@ h1 {
       color: #565656;
       text-align: justify;
       font-size: 15px;
-      font-family: Inter;
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
       word-wrap: break-word;
       resize: none;
@@ -546,7 +546,7 @@ h1 {
       color: #FFF;
       text-align: justify;
       font-size: 15px;
-      font-family: Inter;
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
       word-wrap: break-word;
       margin-left: 7px;
