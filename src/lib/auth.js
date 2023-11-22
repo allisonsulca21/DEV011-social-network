@@ -19,7 +19,7 @@ export const createEmailPassword = (email, password) =>
 export const checkAuthStatus = async (callback) => {
   auth.onAuthStateChanged(async (user) => {
     if (user) {
-      // Si hay un usuario autenticado, actualiza el perfil con el nombre
+      // Si hay un usuario autenticado, actualiza el perfil con el nombre.
       const name = user.displayName;
 
       // Si el usuario no tiene un nombre, intenta obtenerlo desde Firestore
